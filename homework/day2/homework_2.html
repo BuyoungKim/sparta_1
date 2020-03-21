@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <title>homework2</title>
+    <style>
+        #wrap{
+            width:640px;
+            margin:0 auto;
+            }
+        table{
+          margin:60px 0;
+        }
+    </style>
+    <script>
+        function orderIn() {
+            let nameInfo = $('.nameDiv input').val();
+            let countInfo = $('.countDiv select').val();
+            let addressInfo = $('.addressDiv input').val();
+            let numInfo = $('.numDiv input').val();
+
+
+            if (nameInfo == ""){
+                alert('이름을 입력해주세요.');
+                $('.nameDiv input').focus();
+            }
+            else if(countInfo == ""){
+              alert('수량을 선택해주세요.');
+                $('.countDiv select').focus();
+            }
+            else if(addressInfo == ""){
+              alert('주소를 입력해주세요.');
+                $('.addressDiv input').focus();
+            }
+            else if(numInfo == ""){
+              alert('번호를 입력해주세요.');
+                $('.numDiv input').focus();
+            }
+            else{
+              let insertInfo = '<tr><td>' + nameInfo + '</td><td>' + countInfo + '</td><td>' + addressInfo + '</td><td>' + numInfo + '</td></tr>'
+            $('tbody').append(insertInfo);
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <img src="https://scontent-lga3-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/57426301_2345943792350407_6304219535121536721_n.jpg?_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_cat=107&_nc_ohc=RzVeWKAnp8gAX9pV7eE&oh=c16f3cef8446ccb31781f724fb7aee25&oe=5E90408B" alt="">
+        <h1>인형을 팝니다.</h1>
+        <p>설명</p>
+        <section>
+            <div class="input-group mb-3 nameDiv">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">이름</span>
+                </div>
+                <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group mb-3 countDiv">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="inputGroupSelect01">수량</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01">
+                  <option selected value="">-- 수량을 선택해 주세요 --</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+              <div class="input-group mb-3 addressDiv">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">주소</span>
+                </div>
+                <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group mb-3 numDiv">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">전화번호</span>
+                </div>
+                <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              <button class="btn btn-primary" type="submit" onclick="orderIn()">주문하기</button>
+        </section>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">이름</th>
+                <th scope="col">수량</th>
+                <th scope="col">주소</th>
+                <th scope="col">번호</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td >1</td>
+              </tr>
+              <tr>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                <td >1</td>
+              </tr>
+              <tr>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                <td >1</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</body>
+</html>
